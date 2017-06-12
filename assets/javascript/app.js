@@ -15,7 +15,7 @@ function displaySportInfo() {
     var results = response.data;
 
     // console.log("results");
-    // console.log(results);
+    console.log(results);
 
     // Looping through each result item
     for (var i = 0; i < results.length; i++) {
@@ -31,7 +31,7 @@ function displaySportInfo() {
 
         sportImage.attr("src", results[i].images.fixed_height_small_still.url);
         sportImage.attr("data-still", results[i].images.fixed_height_small_still.url);
-        sportImage.attr("data-animate", results[i].images.fixed_height_still.url);
+        sportImage.attr("data-animate", results[i].images.fixed_height_small.url);
         sportImage.attr("data-state", "still");
         sportImage.attr("class", "gif");
 
@@ -82,7 +82,7 @@ $(document).on("click", ".sport", displaySportInfo);
 
 renderButtons();
 
-$(".gif").on("click", function() {
+  $(document).on("click", ".gif", function() {
 
   console.log("in function");
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
@@ -98,3 +98,4 @@ $(".gif").on("click", function() {
         $(this).attr("data-state", "still");
   }
 });
+
