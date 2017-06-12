@@ -24,7 +24,7 @@ function displaySportInfo() {
       // Saving the image_original_url property
       var sportDiv = $("<div>");
 
-      // var p = $("<p>").text("Rating: " + response[i].rating);
+      var p = $("<p>").text("Rating: " + results[i].rating);
 
         // Creating and storing an image tag
         var sportImage = $("<img>");
@@ -36,6 +36,7 @@ function displaySportInfo() {
         sportImage.attr("class", "gif");
 
         sportDiv.append(sportImage);
+        sportDiv.append(p);
 
         $("#images").prepend(sportDiv);
   
